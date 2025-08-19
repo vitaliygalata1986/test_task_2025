@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Nunito', sans-serif;
+}
+
+@theme inline {
+  --primary-color: #f4e041;
+  --secondary-color: #00bdd3;
+  --background-color: #f8f8f8;
+  --text-white-color: #fff;
+  --btn-hover-bg-color: #ffe302;
+  --disabled-btn-bg-color: #b4b4b4;
+  --disabled-btn-bg-color: #b4b4b4;
+  --disabled-btn-text-color: rgba(255, 255, 255, 0.87);
+  --text-black-color: rgba(0, 0, 0, 0.87);
+  --text-input-color: rgba(126, 126, 126, 1);
+  --border-input-enabled: rgba(208, 207, 207, 1);
+  --border-input-invalid: rgba(203, 61, 64, 1);
+}
+
+body {
+  font-family: var(--font-display);
+  background-color: var(--background-color);
+  font-weight: 400;
+}
