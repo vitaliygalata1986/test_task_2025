@@ -55,7 +55,11 @@ const Input: React.FC<InputProps> = ({
           {hint}
         </p>
       )}
-      {error && <p className="text-red-500 text-sm mt-1 pl-4">{error}</p>}
+      {error && (
+        <p className="text-[var(--border-input-invalid)] text-sm mt-1 pl-4">
+          {error}
+        </p>
+      )}
     </>
   );
 };
