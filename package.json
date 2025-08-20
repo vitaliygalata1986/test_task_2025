@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "homepage": "https://vitaliygalata1986.github.io/test-task-2025/",
+  "homepage": "https://vitaliygalata1986.github.io/test_task_2025/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

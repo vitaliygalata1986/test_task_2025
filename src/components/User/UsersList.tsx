@@ -236,10 +236,7 @@ function UsersList() {
           <SuccessMessage />
         ) : (
           <>
-            <Heading
-              tag="h2"
-              className="mb-[50px]"
-            >
+            <Heading tag="h2" className="mb-[50px]">
               Working with POST request
             </Heading>
             {errorRegister && (
@@ -321,7 +318,7 @@ function UsersList() {
                   required
                 />
               </div>
-              <div className="relative z-0 w-full mb-[30px] group">
+              <div className="relative z-0 w-full mb-[5px] group">
                 <Input
                   label="Phone"
                   name="phone"
@@ -374,7 +371,7 @@ function UsersList() {
                 )}
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col mt-[10px]">
                 <PhotoUpload
                   photo={photo}
                   onChange={(file) => setPhoto(file)}
