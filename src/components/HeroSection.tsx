@@ -7,7 +7,7 @@ function HeroSection() {
       <div className="absolute inset-0">
         <img
           className="w-full h-full object-cover"
-          src={`${import.meta.env.BASE_URL}bg-test.jpeg`}
+          src={`${import.meta.env.BASE_URL}bg-test.webp`}
           alt="section-bg"
         />
         <div
