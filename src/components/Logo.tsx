@@ -1,7 +1,7 @@
 function Logo() {
   return (
     <a href="/">
-      <img src="/logo.svg" alt="logo" />
+      <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="logo" />
     </a>
   );
 }

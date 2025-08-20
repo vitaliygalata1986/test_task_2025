@@ -1,5 +1,4 @@
 import Heading from './Headling/Headling';
-import successImg from '/success-image.svg';
 
 const SuccessMessage = () => (
   <section>
@@ -7,7 +6,7 @@ const SuccessMessage = () => (
       User successfully registered
     </Heading>
     <img
-      src={successImg}
+      src={`${import.meta.env.BASE_URL}success-image.svg`}
       alt="User successfully registered"
       className="mx-auto"
     />
