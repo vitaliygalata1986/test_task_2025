@@ -7,17 +7,16 @@ import SuccessMessage from '../SuccessMessage';
 import { PhotoUpload } from '../PhotoUpload/PhotoUpload';
 import { validateForm } from '../../utils/userForm';
 import type { IPosition } from '../../interfaces/position.interface';
+import { createUser } from '../../api/createUser';
 
 type Props = {
-  apiUrl: string;
   positions: IPosition[];
   loadingPositions: boolean;
   positionsError: string | null;
-  onSuccess: () => Promise<void> | void; // вызвать, чтобы родитель обновил список
+  onSuccess: () => Promise<void> | void;
 };
 
 export default function RegistrationForm({
-  apiUrl,
   positions,
   loadingPositions,
   positionsError,
@@ -62,31 +61,21 @@ export default function RegistrationForm({
         }}
         onSubmit={async (e) => {
           e.preventDefault();
+          
           const form = e.currentTarget as HTMLFormElement;
           const { valid, errors } = validateForm(form);
+
           setErrors(errors);
           setIsValid(valid);
+
           if (!valid) return;
 
           setSubmitting(true);
           setServerError(null);
+
           try {
-            const tokenRes = await fetch(`${apiUrl}/token`);
-            if (!tokenRes.ok) throw new Error(`Token HTTP ${tokenRes.status}`);
-            const tokenData = await tokenRes.json();
-            const token = tokenData.token;
-
             const formData = new FormData(form);
-            const res = await fetch(`${apiUrl}/users`, {
-              method: 'POST',
-              headers: { Token: token },
-              body: formData,
-            });
-            const result = await res.json();
-            if (!res.ok || !result.success) {
-              throw new Error(result.message || `Register HTTP ${res.status}`);
-            }
-
+            await createUser(formData);
             form.reset();
             setName('');
             setEmail('');

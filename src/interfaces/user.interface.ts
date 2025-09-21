@@ -1,5 +1,3 @@
-// интерфейс одного пользователя:
-
 export interface IUser {
   id: number;
   name: string;

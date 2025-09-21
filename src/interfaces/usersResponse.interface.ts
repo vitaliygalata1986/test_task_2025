@@ -1,8 +1,5 @@
 import type { IUser } from './user.interface';
 
-
-// Здесь описывается ответ API при получении списка пользователей:
-
 export interface IUsersResponse {
   success: true;
   users: IUser[];

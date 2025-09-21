@@ -19,7 +19,6 @@ export default function UsersList({
   hasMore,
   onShowMore,
 }: Props) {
-  console.log(users);
   return (
     <section className="py-[140px] px-4 md:px-8 lg:px-[60px] xl:px-0">
       <Heading tag="h2" className="mb-[50px]">
@@ -36,7 +35,7 @@ export default function UsersList({
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-4 lg:gap-[29px]">
         {users.map((user) => (
-          <User key={user.id} {...user} />
+          <User key={`${user.id}`} {...user} />
         ))}
       </div>
 
